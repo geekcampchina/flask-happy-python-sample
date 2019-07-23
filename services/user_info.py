@@ -49,7 +49,7 @@ def get_user_info():
         return make_api_response(1, result[1])
 
     company_id = request.args.get('company_id')
-    user_id = request.headers.get('user_id')
+    user_id = request.args.get('user_id')
     hlog.var('company_id', company_id)
     hlog.var('user_id', user_id)
 
@@ -62,7 +62,7 @@ def get_user_info():
         "obj": {
             "companyId": company_id,
             "date": str(today_date),
-            "user_id": 0,
+            "userId": user_id
         }
     }
 
